@@ -3,10 +3,10 @@ const createPizza = pizzaPieces => {
   const pizza = document.createElement("div");
   pizza.className = "pizza";
 
-  for (let curDeg = 0; curDeg < 360; curDeg += sliceDeg) {
-    let peace = document.createElement("div");
+  for (let i = 0, deg = 0; i < pizzaPieces; i++, deg += sliceDeg) {
+    const peace = document.createElement("div");
     peace.className = "peace";
-    peace.style.transform = `rotate(${curDeg}deg)`;
+    peace.style.transform = `rotate(${deg}deg)`;
     pizza.appendChild(peace);
   }
   return pizza;
@@ -21,7 +21,7 @@ const clearPizza = () => {
 
 export const renderPizza = pizza => {
   clearPizza();
-  document.getElementById("root").appendChild(pizza);
+  document.querySelector(".app").appendChild(pizza);
 };
 
 export default createPizza;

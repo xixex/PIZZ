@@ -25,7 +25,7 @@ const clearBanner = () => {
 
 export const renderBanner = banner => {
   clearBanner();
-  document.getElementById("root").appendChild(banner);
+  document.querySelector(".app").appendChild(banner);
 };
 
 export default createGuestsBanner;
