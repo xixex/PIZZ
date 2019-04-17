@@ -1,2 +1,0 @@
-# PIZZ
-Created with CodeSandbox
