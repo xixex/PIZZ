@@ -1,9 +1,28 @@
+$pizza-size: 300px;
+
 body {
-  font-family: sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
-button {
-  background: red;
-  color: blue;
+.btn {
   font-size: 20px;
+  height: 40px;
+}
+.loading{
+  background-color: blue ;
+}
+.pizza{
+  width: $pizza-size;
+  height: $pizza-size;
+  position: relative;
+  background-color: yellow;
+  border-radius: 50%;
+}
+.peace{
+  height: 1px;
+  background-color: white;
+  width: 150px;
+  top: 50%;
+  position: absolute;
+  transform-origin: 100%;
 }
