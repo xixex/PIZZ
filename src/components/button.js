@@ -1,5 +1,15 @@
-import { fetchGuests, calculatePizzaEaters } from "./guestsService";
-const createButton = (text, renderPizza) => {
+import {
+  fetchGuests,
+  calculatePizzaEaters,
+  calculateAllGuests
+} from "../services/guestsService";
+const createButton = (
+  text,
+  createPizza,
+  renderPizza,
+  createGuestsBanner,
+  renderBanner
+) => {
   const button = document.createElement("button");
   button.className = "btn btn-load";
   button.innerText = text || "Button";
@@ -10,8 +20,12 @@ const createButton = (text, renderPizza) => {
     fetchGuests().then(data => {
       button.innerHTML = "Load";
       button.classList.toggle("loading");
+      const guestNumber = calculateAllGuests(data);
       const pizzaPieces = calculatePizzaEaters(data);
-      renderPizza(pizzaPieces);
+      const pizza = createPizza(pizzaPieces);
+      const banner = createGuestsBanner(pizzaPieces, guestNumber);
+      renderPizza(pizza);
+      renderBanner(banner);
     });
   });
   return button;

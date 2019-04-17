@@ -1,5 +1,5 @@
 import "./styles.scss";
-import button from "./button";
-import renderPizza from "./pizza";
+import createApp from "./components/app";
 
-document.getElementById("root").appendChild(button("Load", renderPizza));
+const app = createApp();
+document.getElementById("root").appendChild(app);
