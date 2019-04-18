@@ -3,6 +3,7 @@ import {
   calculatePizzaEaters,
   calculateAllGuests
 } from "../services/guestsService";
+
 const createButton = (
   text,
   createPizza,
@@ -11,19 +12,21 @@ const createButton = (
   renderBanner
 ) => {
   const button = document.createElement("button");
-  button.className = "btn btn-load";
+  button.className = "btn";
   button.innerText = text || "Button";
 
   button.addEventListener("click", () => {
     button.classList.toggle("loading");
-    button.innerHTML = "Waiting...";
+    button.innerText = "Waiting...";
     fetchGuests().then(data => {
-      button.innerHTML = "Load";
+      button.innerText = text || "Button";
       button.classList.toggle("loading");
+
       const guestNumber = calculateAllGuests(data);
       const pizzaPieces = calculatePizzaEaters(data);
       const pizza = createPizza(pizzaPieces);
       const banner = createGuestsBanner(pizzaPieces, guestNumber);
+
       renderPizza(pizza);
       renderBanner(banner);
     });

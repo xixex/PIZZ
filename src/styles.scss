@@ -1,16 +1,21 @@
 $pizza-size: 15em;
+$pizza-img: 'https://t3.ftcdn.net/jpg/01/71/84/50/240_F_171845099_HX3VakW5hyUBjGU7uoo7QwcqQg6JBJwI.jpg';
 $main-color: #2b2b2b;
 $alt-color: #FFF;
+$main-img: 'https://backgrounddownload.com/wp-content/uploads/2018/09/pizzeria-background-2.jpg';
+
 *{
   margin: 0;
   padding: 0;
-  // overflow: hidden;
+  overflow: hidden;
   font-family: 'Montserrat', sans-serif;
 }
 
 body{
+  font-size: 2vh;
   background-color: $main-color;
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://backgrounddownload.com/wp-content/uploads/2018/09/pizzeria-background-2.jpg');
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url($main-img);
+  background-size: cover;
   color: $alt-color;
   height: 100vh;
 }
@@ -23,14 +28,18 @@ body{
 .app{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
+  height: 60vh;
   align-items: center;
 }
 
 .btn {
-  font-size: 20px;
-  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 2em;
   padding: 0 1em;
+  height: 2em;
   user-select: none;
   cursor: pointer;
   background-color: transparent;
@@ -51,7 +60,8 @@ body{
   position: relative;
   background-color: yellow;
   border-radius: 50%;
-  background: url('https://t3.ftcdn.net/jpg/01/71/84/50/240_F_171845099_HX3VakW5hyUBjGU7uoo7QwcqQg6JBJwI.jpg');
+  background: url($pizza-img);
+  background-size: cover;
   margin: 1em;
   animation: spin 3s;
 }
@@ -62,7 +72,7 @@ body{
   justify-content: center;
   align-items: center;
 }
-.peace{
+.piece{
   height: 2px;
   background-color: $alt-color;
   width: $pizza-size/2;

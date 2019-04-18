@@ -4,10 +4,10 @@ const createPizza = pizzaPieces => {
   pizza.className = "pizza";
 
   for (let i = 0, deg = 0; i < pizzaPieces; i++, deg += sliceDeg) {
-    const peace = document.createElement("div");
-    peace.className = "peace";
-    peace.style.transform = `rotate(${deg}deg)`;
-    pizza.appendChild(peace);
+    const piece = document.createElement("div");
+    piece.className = "piece";
+    piece.style.transform = `rotate(${deg}deg)`;
+    pizza.appendChild(piece);
   }
   return pizza;
 };

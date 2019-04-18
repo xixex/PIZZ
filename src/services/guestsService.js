@@ -1,7 +1,7 @@
 export const fetchGuests = () => {
   return fetch("https://gp-js-test.herokuapp.com/pizza")
     .then(response => response.json())
-    .then(data => data["party"]);
+    .then(data => data.party);
 };
 
 export const calculatePizzaEaters = guests =>
