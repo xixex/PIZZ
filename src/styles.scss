@@ -63,7 +63,7 @@ body{
   background: url($pizza-img);
   background-size: cover;
   margin: 1em;
-  animation: spin 3s;
+  animation: spin 0.3s;
 }
 .banner{
   font-size: 1.5em;
@@ -75,16 +75,17 @@ body{
 .piece{
   height: 2px;
   background-color: $alt-color;
-  width: $pizza-size/2;
+  width: 0;
   top: 50%;
   right: 50%;
   position: absolute;
   transform-origin: 100%;  
-  animation: slice 1s ease-in-out;
+  animation: slice 0.2s ease-in-out;
+  animation-fill-mode: forwards;  
 }
 @keyframes slice{
-  0%{
-    width: 0;
+  100%{
+    width: $pizza-size/2;
   }
 }
 @keyframes spin{
